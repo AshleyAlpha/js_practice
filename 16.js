@@ -288,12 +288,199 @@ function countVowels(str) {
     return count;
 }
 
-// Example usage:
-const str = "Hello, World!";
+const str = "Complicated";
 console.log("Number of vowels:", countVowels(str)); // Output: 3
 
+//36
 
- 
+function countConsonants(str) {
+    // Convert the string to lowercase to make the matching case-insensitive
+    str = str.toLowerCase();
+
+    // Define an array of vowels
+    const consonants = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
+
+    // Initialize a variable to store the count of vowels
+    let count = 0;
+
+    // Loop through each character in the string
+    for (let char of str) {
+        // Check if the character is a vowel
+        if (consonants.includes(char)) {
+            // If it is a consonat, increment the count
+            count++;
+        }
+    }
+
+    // Return the total count of vowels in the string
+    return count;
+}
+
+const str = "yaay";
+console.log("The Number of consonants is:", countConsonants(str));
+
+//38
+function findIndexOfChar(str, char) {
+    // Loop through each character in the string
+    for (let i = 0; i < str.length; i++) {
+        // Check if the current character matches the given character
+        if (str[i] === char) {
+            // If a match is found, return the index
+            return i;
+        }
+    }
+
+    // If the character is not found in the string, return -1
+    return "c'est introuvable yoo!";
+}
+
+// Example usage:
+const str = "Hypocondriaque";
+const char = "m";
+console.log("Index of", char, ":", findIndexOfChar(str, char));
+
+//39
+
+function removeDuplicates(array) {
+    // Create an empty object to store unique elements
+    let uniqueObject = {};
+
+    // Store unique elements from the array as keys in the object
+    for (let i = 0; i < array.length; i++) {
+        uniqueObject[array[i]] = true;
+    }
+
+    // Extract keys (unique elements) from the object and convert them back to an array
+    let uniqueArray = Object.keys(uniqueObject);
+
+    return uniqueArray;
+}
+
+let array = [1, 2, 3, 84, 2, 3, 5];
+let uniqueArray = removeDuplicates(array);
+console.log(uniqueArray); 
+
+//40
+
+function isInArray(value, array) {
+    return array.includes(value);
+}
+
+const array = [1, 2, 3, 4, 5];
+const valueToCheck = 6;
+
+if (isInArray(valueToCheck, array)) {
+    console.log(`${valueToCheck} is present in the array.`);
+} else {
+    console.log(`${valueToCheck} is not present in the array.`);
+}
+
+//41
+
+function squareArrayElements(arr) {
+    
+    if (!Array.isArray(arr)) {
+        return "Input is not an array.";
+    }
+
+    // Map through the array and square each element
+    var squaredArray = arr.map(function(element) {
+        return element * element;
+    });
+
+    return squaredArray;
+}
+
+var originalArray = [1, 2, 3, 8, 5];
+var squaredArray = squareArrayElements(originalArray);
+console.log(squaredArray); 
+
+//42
+
+function getFirstNElements(arr, n) {
+    // Check if the input is an array
+    if (!Array.isArray(arr)) {
+        return "Input is not an array.";
+    }
+
+    // Return the first n elements of the array using slice
+    return arr.slice(0, n);
+}
+
+var originalArray = [1, 2, 3, 4, 5];
+var n = 4;
+var firstNElements = getFirstNElements(originalArray, n);
+console.log(firstNElements); 
+
+//43
+function removeLastElement(arr) {
+    // Check if the input is an array
+    if (!Array.isArray(arr)) {
+        return "Input is not an array.";
+    }
+
+    // Remove the last element from the array using pop()
+    arr.pop();
+
+    // Return the modified array
+    return arr;
+}
+
+var originalArray = [1, 2, 3, 4, 5,6,7];
+var newArray = removeLastElement(originalArray);
+console.log(newArray);
+
+//44
+
+function areAllPositive(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] <= 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+const array1 = [1, 2, 3, 4, 5,-6];
+const array2 = [-1, 2, 3, 4, 5];
+
+console.log(areAllPositive(array1)); 
+console.log(areAllPositive(array2));
+
+//45
+
+function sumOfEvenNumbers(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,4];
+console.log("Sum of even numbers:", sumOfEvenNumbers(numbers));
+
+//46
+
+function convertToUpperCase(arr) {
+    let uppercaseArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        uppercaseArray.push(arr[i].toUpperCase());
+    }
+    return uppercaseArray;
+}
+
+const stringsArray = ["hello", "mamie", "Miah"];
+const uppercaseStrings = convertToUpperCase(stringsArray);
+console.log(uppercaseStrings);
+
+//47
+
+
+
+
 
 
 
