@@ -96,14 +96,14 @@ let characterCount = countCharactersWithoutSpaces(inputString);
 console.log("Number of characters; spaces excluded):", characterCount);
 
 //20
-function displayOddNumbers() {
+function displayEvenNumbers() {
   for (var i = 0; i <= 100; i++) {
     if (i % 2 == 0) {
       console.log(i);
     }
   }
 }
-displayOddNumbers();
+displayEvenNumbers();
 
 //21
 let nom = 5;
@@ -202,6 +202,101 @@ function displayMultiplesOf5(limit) {
     }
 }
 displayMultiplesOf5(10);
+
+//30
+function displayOddNumbers() {
+    for (var i = 0; i <= 100; i++) {
+      if (i % 2 !== 0) {
+        console.log(i);
+      }
+    }
+  }
+  displayOddNumbers();
+
+  //31
+  function squareRoot(number) {
+    return Math.sqrt(number);
+}
+
+console.log(squareRoot(49));
+console.log(squareRoot(16));
+console.log(squareRoot(9));  
+
+//32
+function findBiggerNumber(num1, num2) {
+    if (num1 > num2) {
+        return num1;
+    } else {
+        return num2;
+    }
+}
+
+console.log(findBiggerNumber(5, 10));   
+console.log(findBiggerNumber(20, +15));
+console.log(findBiggerNumber(-3, -8));
+
+//33
+
+function inCapitalLetters(str){
+    return str.toUpperCase()
+ }
+ console.log(inCapitalLetters('Samie'));
+
+ //34
+ function stringModifier(str, position, replacement) {
+    // Check if the position is valid
+    if (position < 0 || position >= str.length) {
+        return "Invalid position provided";
+    }
+
+    // Convert the string into an array to modify the character at the specified position
+    let strArray = str.split('');
+    
+    // Replace the character at the specified position with the replacement character
+    strArray[position] = replacement;
+
+    // Join the array back into a string and return the modified string
+    return strArray.join('');
+}
+
+let originalString = "Hello, world!";
+let modifiedString = stringModifier(originalString, 7, 'y');
+console.log(modifiedString); 
+
+//35
+
+function countVowels(str) {
+    // Convert the string to lowercase to make the matching case-insensitive
+    str = str.toLowerCase();
+
+    // Define an array of vowels
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+    // Initialize a variable to store the count of vowels
+    let count = 0;
+
+    // Loop through each character in the string
+    for (let char of str) {
+        // Check if the character is a vowel
+        if (vowels.includes(char)) {
+            // If it is a vowel, increment the count
+            count++;
+        }
+    }
+
+    // Return the total count of vowels in the string
+    return count;
+}
+
+// Example usage:
+const str = "Hello, World!";
+console.log("Number of vowels:", countVowels(str)); // Output: 3
+
+
+ 
+
+
+
 
 
 
