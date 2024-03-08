@@ -478,6 +478,79 @@ console.log(uppercaseStrings);
 
 //47
 
+function getRandomNumber(min, max) {
+    // Ensure that the provided min and max are valid numbers
+    if (typeof min !== 'number' || typeof max !== 'number') {
+      throw new Error('Both arguments must be numbers');
+    }
+  
+    // Ensure that min is less than max
+    if (min >= max) {
+      throw new Error('The minimum value must be less than the maximum value');
+    }
+  
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  var min = 2;
+  var max = 100;
+  var randomNumber = getRandomNumber(min, max);
+  console.log('Random number between ' + min + ' and ' + max + ': ' + randomNumber);
+
+  //48
+
+  function reverseArray(array) {
+    let reversedArray = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+        reversedArray.push(array[i]);
+    }
+    return reversedArray;
+}
+
+let originalArray = [1, 2, 3, 4, 5];
+let reversed = reverseArray(originalArray);
+console.log(reversed);
+
+//49
+
+function fibonacci(n) {
+    var fibSequence = [0, 1]; 
+    if (n <= 2) {
+        return fibSequence.slice(0, n); 
+    }
+
+    for (var i = 2; i < n; i++) {
+        var nextFib = fibSequence[i - 1] + fibSequence[i - 2]; 
+        fibSequence.push(nextFib);
+    }
+
+    return fibSequence;
+}
+
+var n = 10; 
+var result = fibonacci(n);
+console.log(result); 
+
+//50
+
+function isSortedAscending(arr) {
+    for (var i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return false; // If any element is greater than the next one, array is not sorted
+        }
+    }
+    return true; // If no elements violate the order, array is sorted
+}
+
+var array1 = [1, 2, 3, 4, 5];
+console.log(isSortedAscending(array1)); 
+
+var array2 = [5, 3, 2, 1];
+console.log(isSortedAscending(array2)); 
+
+//51
+
+
 
 
 
