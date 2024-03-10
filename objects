@@ -1,0 +1,42 @@
+
+JavaScript offers several built-in objects and methods that are commonly used to work with arrays. Here's a list of some of the most frequently used ones along with their roles:
+
+Array Object:
+
+Role: The Array object is a global object used to create arrays, which are high-level, list-like objects. Arrays are used to store multiple values in a single variable.
+Array.prototype.forEach() Method:
+
+Role: This method executes a provided function once for each array element.gi
+Array.prototype.map() Method:
+
+Role: This method creates a new array populated with the results of calling a provided function on every element in the calling array.
+Array.prototype.filter() Method:
+
+Role: This method creates a new array with all elements that pass the test implemented by the provided function.
+Array.prototype.reduce() Method:
+
+Role: This method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+Array.prototype.find() Method:
+
+Role: This method returns the value of the first element in the array that satisfies the provided testing function. Otherwise, it returns undefined.
+Array.prototype.findIndex() Method:
+
+Role: This method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1.
+Array.prototype.some() Method:
+
+Role: This method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+Array.prototype.every() Method:
+
+Role: This method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+Array.prototype.includes() Method:
+
+Role: This method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+Array.prototype.sort() Method:
+
+Role: This method sorts the elements of an array in place and returns the sorted array.
+Array.prototype.concat() Method:
+
+Role: This method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+Array.prototype.slice() Method:
+
+Role: This method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array.
