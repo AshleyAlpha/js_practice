@@ -756,6 +756,62 @@ console.log(string3, "contains only digits:", containsOnlyDigits(string3));
 
 //61
 
+function countWords(sentence) {
+    // Remove leading and trailing white spaces
+    sentence = sentence.trim();
+
+    // If the sentence is empty, return 0
+    if (sentence === '') {
+        return 0;
+    }
+
+    // Split the sentence by white spaces
+    var words = sentence.split(/\s+/);
+
+    // Return the number of words
+    return words.length;
+}
+
+var sentence = "Java Script is sometimes confusing and complicated.";
+console.log("The Number of words in this sentence is:", countWords(sentence));
+
+//62
+
+function celsiusToFahrenheit(celsius) {
+    var fahrenheit = (celsius * 9/5) + 32;
+    return fahrenheit;
+}
+
+// Test the function
+var celsiusInput = parseFloat(prompt("Enter temperature in Celsius: "));
+var fahrenheitOutput = celsiusToFahrenheit(celsiusInput);
+console.log(celsiusInput + " degrees Celsius is equal to " + fahrenheitOutput + " degrees Fahrenheit.");
+
+//63
+
+function generatePyramid(height) {
+    for (var i = 0; i < height; i++) {
+        var row = ' ';
+        
+        // Add spaces
+        for (var j = 0; j < height - i - 1; j++) {
+            row += ' ';
+        }
+        
+        // Add asterisks
+        for (var k = 0; k < 2 * i + 1; k++) {
+            row += '*';
+        }
+        
+        console.log(row);
+    }
+}
+
+// Test the function
+var pyramidHeight = parseInt(prompt("Enter the height of the pyramid: "));
+generatePyramid(pyramidHeight);
+
+
 
 
 
