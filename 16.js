@@ -550,6 +550,213 @@ console.log(isSortedAscending(array2));
 
 //51
 
+function filterOutNegativeNumbers(array) {
+    // Use the filter method to create a new array with only positive numbers
+    let positiveNumbers = array.filter(function(num) {
+        return num >= 0; // Filter condition: keep numbers that are greater than or equal to 0
+    });
+    return positiveNumbers;
+}
+
+let numbers = [1, -2, 3, -4, 5, -6];
+let positiveNumbers = filterOutNegativeNumbers(numbers);
+console.log(positiveNumbers);
+
+//52
+
+function findMedian(array) {
+    // First, let's sort the array in ascending order
+    array.sort(function(a, b) {
+        return a - b;
+    });
+
+    // Check if the array length is odd or even
+    const isEven = array.length % 2 === 0;
+
+    if (isEven) {
+        // If the array length is even, return the average of the two middle numbers
+        const midIndex = array.length / 2;
+        const median = (array[midIndex - 1] + array[midIndex]) / 2;
+        return median;
+    } else {
+        // If the array length is odd, return the middle number
+        const midIndex = Math.floor(array.length / 2);
+        return array[midIndex];
+    }
+}
+
+let numbers = [5, 2, 9, 1, 7, 3, 8, 4, 6];
+let median = findMedian(numbers);
+console.log("Median:", median); // Output: Median: 5
+
+//53
+
+function capitalizeWords(sentence) {
+    // Split the sentence into an array of words
+    let words = sentence.split(" ");
+
+    // Iterate over each word in the array
+    for (let i = 0; i < words.length; i++) {
+        // Capitalize the first letter of each word and concatenate it with the rest of the word
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+
+    // Join the words back into a sentence
+    let capitalizedSentence = words.join(" ");
+
+    return capitalizedSentence;
+}
+
+// Example usage:
+let sentence = "il fait chaud ici, ne c'est pas?";
+let capitalizedSentence = capitalizeWords(sentence);
+console.log(capitalizedSentence); 
+
+//54
+
+function isLeapYear(year) {
+
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return true; 
+    } else {
+        return false;
+    }
+}
+
+let year = 2048;
+if (isLeapYear(year)) {
+    console.log(year + " is a leap year.");
+} else {
+    console.log(year + " is not a leap year.");
+}
+
+//55
+
+function findIntersection(array1, array2) {
+    // Create an empty array to store the intersection
+    let intersection = [];
+
+    // Iterate over each element in array1
+    for (let i = 0; i < array1.length; i++) {
+        // Check if the current element exists in array2
+        if (array2.includes(array1[i])) {
+            // If it does, add it to the intersection array
+            intersection.push(array1[i]);
+        }
+    }
+
+    return intersection;
+}
+
+let array1 = [1, 2, 3, 4, 5,9];
+let array2 = [3, 4, 5, 6, 7,9];
+let result = findIntersection(array1, array2);
+console.log("Intersection:", result);
+
+//56
+
+function isPrime(number) {
+    //A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+    
+    // Check if the number is less than 2
+    if (number < 2) {
+        return false; // Numbers less than 2 are not prime
+    }
+
+    // Iterate from 2 to the square root of the number
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        // If the number is divisible by any integer from 2 to the square root of the number, it's not prime
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true; // If the number is not divisible by any integer from 2 to the square root, it's prime
+}
+
+let number = 11;
+if (isPrime(number)) {
+    console.log(number + " is a prime number.");
+} else {
+    console.log(number + " is not a prime number.");
+}
+
+//57
+
+function power(base, exponent) {
+    // Check if the exponent is 0
+    if (exponent === 0) {
+        return 1; // Any number raised to the power of 0 is 1
+    }
+
+    let result = 1;
+
+  
+    if (exponent > 0) {
+        for (let i = 0; i < exponent; i++) {
+            result *= base; // Multiply the base by itself exponent times
+        }
+    }
+    // Handle negative exponents
+    else {
+        for (let i = 0; i > exponent; i--) {
+            result /= base; // Divide the base by itself exponent times (for negative exponents)
+        }
+    }
+
+    return result;
+}
+
+let base = 4;
+let exponent = 3;
+let result = power(base, exponent);
+console.log(`${base} raised to the power of ${exponent} is ${result}`); 
+
+//58
+function calculateRectangleArea(length, width) {
+    // Calculate the area of the rectangle
+    var area = length * width;
+    return area;
+}
+
+var length = 5;
+var width = 3;
+var area = calculateRectangleArea(length, width);
+console.log("Area of the rectangle:", area);
+
+//59
+
+function calculateRectanglePerimeter(length, width) {
+
+    var perimeter = 2 * length * width;
+    return perimeter;
+}
+
+var length = 5;
+var width = 3;
+var perimeter = calculateRectanglePerimeter(length, width);
+console.log("Area of the rectangle:", perimeter);
+
+//60
+function containsOnlyDigits(str) {
+    // Regular expression to match only digits
+    var regex = /^[0-9]+$/;
+
+    // Test the string against the regular expression
+    return regex.test(str);
+}
+
+var string1 = "123a5";
+var string2 = "123";
+var string3 = "123xyz";
+
+console.log(string1, "contains only digits:", containsOnlyDigits(string1)); 
+console.log(string2, "contains only digits:", containsOnlyDigits(string2)); 
+console.log(string3, "contains only digits:", containsOnlyDigits(string3));
+
+//61
+
+
 
 
 
